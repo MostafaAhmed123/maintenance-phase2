@@ -29,35 +29,33 @@ import org.unitime.timetable.model.base.BaseClassEvent;
 import org.unitime.timetable.model.dao.ClassEventDAO;
 import org.unitime.timetable.model.dao.RelatedCourseInfoDAO;
 
-
-
 /**
  * @author Tomas Muller
  */
 public class ClassEvent extends BaseClassEvent {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-/*[CONSTRUCTOR MARKER BEGIN]*/
-	public ClassEvent () {
-		super();
-	}
+    /* [CONSTRUCTOR MARKER BEGIN] */
+    public ClassEvent() {
+        super();
+    }
 
-	/**
-	 * Constructor for primary key
-	 */
-	public ClassEvent (java.lang.Long uniqueId) {
-		super(uniqueId);
-	}
+    /**
+     * Constructor for primary key
+     */
+    public ClassEvent(java.lang.Long uniqueId) {
+        super(uniqueId);
+    }
 
-/*[CONSTRUCTOR MARKER END]*/
+    /* [CONSTRUCTOR MARKER END] */
 
     public Set<Student> getStudents() {
         HashSet<Student> students = new HashSet();
-        for (Iterator i=getClazz().getStudentEnrollments().iterator();i.hasNext();)
-            students.add(((StudentClassEnrollment)i.next()).getStudent());
+        for (Iterator i = getClazz().getStudentEnrollments().iterator(); i.hasNext();)
+            students.add(((StudentClassEnrollment) i.next()).getStudent());
         return students;
     }
-    
+
     public Collection<Long> getStudentIds() {
         return new RelatedCourseInfoDAO().getSession().createQuery(
                 "select distinct e.student.uniqueId from StudentClassEnrollment e where e.clazz.uniqueId = :classId")
@@ -65,15 +63,16 @@ public class ClassEvent extends BaseClassEvent {
                 .setCacheable(true)
                 .list();
     }
-/////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
     // get the number of students registered in the class
-    public long long getNumberOfStudents(){
+    public long getNumberOfStudents() {
         Set<Student> students = this.getStudents();
         return students.size();
     }
 
     // get the number of instructors for this class
-    public long long getNumberOfInstructors(){
+    public long getNumberOfInstructors() {
         Set<DepartmentalInstructor> instructors = this.getInstructors();
         return instructors.size();
     }
@@ -81,25 +80,30 @@ public class ClassEvent extends BaseClassEvent {
     /////////////////////////////////////////////////////////////////////////////////////////
     public Set<DepartmentalInstructor> getInstructors() {
         HashSet<DepartmentalInstructor> instructors = new HashSet();
-        for (Iterator i=getClazz().getClassInstructors().iterator();i.hasNext();) {
-            ClassInstructor ci = (ClassInstructor)i.next();
-            if (ci.isLead()) instructors.add(ci.getInstructor());
+        for (Iterator i = getClazz().getClassInstructors().iterator(); i.hasNext();) {
+            ClassInstructor ci = (ClassInstructor) i.next();
+            if (ci.isLead())
+                instructors.add(ci.getInstructor());
         }
         return instructors;
     }
-    
-    public int getEventType() { return sEventTypeClass; }
-    
-    public Session getSession() { return getClazz().getSession(); }
 
-	@Override
-	public Collection<StudentClassEnrollment> getStudentClassEnrollments() {
-		return (List<StudentClassEnrollment>)
-			ClassEventDAO.getInstance().getSession().createQuery(
-					"select distinct e from StudentClassEnrollment e, StudentClassEnrollment f where f.clazz.uniqueId = :classId" +
-        			" and e.courseOffering.instructionalOffering = f.courseOffering.instructionalOffering and e.student = f.student")
-				.setLong("classId", getClazz().getUniqueId())
-				.list();
-	}
+    public int getEventType() {
+        return sEventTypeClass;
+    }
+
+    public Session getSession() {
+        return getClazz().getSession();
+    }
+
+    @Override
+    public Collection<StudentClassEnrollment> getStudentClassEnrollments() {
+        return (List<StudentClassEnrollment>) ClassEventDAO.getInstance().getSession().createQuery(
+                "select distinct e from StudentClassEnrollment e, StudentClassEnrollment f where f.clazz.uniqueId = :classId"
+                        +
+                        " and e.courseOffering.instructionalOffering = f.courseOffering.instructionalOffering and e.student = f.student")
+                .setLong("classId", getClazz().getUniqueId())
+                .list();
+    }
 
 }
