@@ -48,6 +48,10 @@ import org.unitime.timetable.onlinesectioning.custom.CustomStudentEnrollmentHold
 import org.unitime.timetable.security.Qualifiable;
 import org.unitime.timetable.util.NameFormat;
 import org.unitime.timetable.util.NameInterface;
+import org.unitime.timetable.model.CourseType;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import org.unitime.timetable.model.*;
 
 /**
  * @author Tomas Muller, Stephanie Schluttenhofer
@@ -56,12 +60,14 @@ public class Student extends BaseStudent implements Comparable<Student>, NameInt
 	private static final long serialVersionUID = 1L;
 
 	//////////////////////////////////////
-	private Set<Course> favouriteCourses;
+	private Set<CourseType> favouriteCourses;
 
 	//////////////////////////////////////
 	/* [CONSTRUCTOR MARKER BEGIN] */
 	public Student() {
 		super();
+		favouriteCourses = new TreeSet<CourseType>();
+
 	}
 
 	/**
@@ -79,12 +85,16 @@ public class Student extends BaseStudent implements Comparable<Student>, NameInt
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////
-	public void addToFavourite(Course course) {
+	public void addToFavourite(CourseType course) {
 		favouriteCourses.add(course);
 	}
 
-	public Set<Course> getFavouriteCourses() {
+	public Set<CourseType> getFavouriteCourses() {
 		return favouriteCourses;
+	}
+
+	public void removeFromFavourite(CourseType course) {
+		favouriteCourses.remove(course);
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////
 

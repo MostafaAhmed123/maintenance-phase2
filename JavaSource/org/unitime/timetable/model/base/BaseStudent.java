@@ -24,7 +24,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.unitime.timetable.gwt.client.instructor.survey.InstructorSurveyInterface;
 import org.unitime.timetable.model.Advisor;
 import org.unitime.timetable.model.AdvisorCourseRequest;
 import org.unitime.timetable.model.CourseDemand;
@@ -41,9 +40,7 @@ import org.unitime.timetable.model.StudentSectioningStatus;
 import org.unitime.timetable.model.WaitList;
 
 /**
- * Do not change this class. It has been automatically generated using ant
- * create-model.
- * 
+ * Do not change this class. It has been automatically generated using ant create-model.
  * @see org.unitime.commons.ant.CreateBaseModelFromXml
  */
 public abstract class BaseStudent implements Serializable {
@@ -83,9 +80,9 @@ public abstract class BaseStudent implements Serializable {
 	private Set<StudentNote> iNotes;
 	private Set<Advisor> iAdvisors;
 	private Set<AdvisorCourseRequest> iAdvisorCourseRequests;
-	
-	public static String PROP_UNIQUEID = 
-	lic static String PROP_EXTERNAL_UID = "externalUniqueId";
+
+	public static String PROP_UNIQUEID = "uniqueId";
+	public static String PROP_EXTERNAL_UID = "externalUniqueId";
 	public static String PROP_FIRST_NAME = "firstName";
 	public static String PROP_MIDDLE_NAME = "middleName";
 	public static String PROP_LAST_NAME = "lastName";
@@ -116,386 +113,189 @@ public abstract class BaseStudent implements Serializable {
 
 	protected void initialize() {}
 
-	public Long getUniqueId() { r
-	eturn iUniqueId; }
+	public Long getUniqueId() { return iUniqueId; }
 	public void setUniqueId(Long uniqueId) { iUniqueId = uniqueId; }
 
-		
-	
-
-	public String getExternalUniqueId() { re
-		urn iExternalUniqueId
-	 }
+	public String getExternalUniqueId() { return iExternalUniqueId; }
 	public void setExternalUniqueId(String externalUniqueId) { iExternalUniqueId = externalUniqueId; }
 
-		
-	
-
 	public String getFirstName() { return iFirstName; }
-		
-	
 	public void setFirstName(String firstName) { iFirstName = firstName; }
 
-		
-	
-
-	public String getMiddleName() { return iMidd
-		eName; }
-	
+	public String getMiddleName() { return iMiddleName; }
 	public void setMiddleName(String middleName) { iMiddleName = middleName; }
 
-		
-	
-
-	public String getLastName() { return iLastName
-		 }
-	
+	public String getLastName() { return iLastName; }
 	public void setLastName(String lastName) { iLastName = lastName; }
 
-		
-	
-
-	public String getEmail() { return iEmail; 
-		
-	
+	public String getEmail() { return iEmail; }
 	public void setEmail(String email) { iEmail = email; }
 
-		
-	
-
-	public Integer getFreeTimeCategory()
-		{ return iFreeT
-	meCategory; }
+	public Integer getFreeTimeCategory() { return iFreeTimeCategory; }
 	public void setFreeTimeCategory(Integer freeTimeCategory) { iFreeTimeCategory = freeTimeCategory; }
 
-		
-	
-
-	public Integer getSchedulePreference() { return iSchedulePr
-		ference; }
-	
+	public Integer getSchedulePreference() { return iSchedulePreference; }
 	public void setSchedulePreference(Integer schedulePreference) { iSchedulePreference = schedulePreference; }
 
-		
-	
-
 	public Float getMaxCredit() { return iMaxCredit; }
-		
-	
 	public void setMaxCredit(Float maxCredit) { iMaxCredit = maxCredit; }
 
-		
-	
-
-	public Float getMinCredit() { return iMinCr
-		dit; }
-	
+	public Float getMinCredit() { return iMinCredit; }
 	public void setMinCredit(Float minCredit) { iMinCredit = minCredit; }
 
-		
-	
-
-	public Float getOverrideMaxCredit() { retur
-		 iOverrideMaxCredit; }
-	
+	public Float getOverrideMaxCredit() { return iOverrideMaxCredit; }
 	public void setOverrideMaxCredit(Float overrideMaxCredit) { iOverrideMaxCredit = overrideMaxCredit; }
 
-		
-	
-
-	public Integer getOverrideStatus() { return iOverrideStatus
-		 }
-	
+	public Integer getOverrideStatus() { return iOverrideStatus; }
 	public void setOverrideStatus(Integer overrideStatus) { iOverrideStatus = overrideStatus; }
 
-		
-	
-
-	public String getOverrideExternalId() { return iOverrid
-		ExternalId; }
-	
+	public String getOverrideExternalId() { return iOverrideExternalId; }
 	public void setOverrideExternalId(String overrideExternalId) { iOverrideExternalId = overrideExternalId; }
 
-		
-	
-
-	public Date getOverrideTimeStamp() { return iOverrideTimeStamp
-		 }
-	
+	public Date getOverrideTimeStamp() { return iOverrideTimeStamp; }
 	public void setOverrideTimeStamp(Date overrideTimeStamp) { iOverrideTimeStamp = overrideTimeStamp; }
 
-		
-	
-
-	public Integer getOverrideIntent() { return iOverrideInten
-		; }
-	
+	public Integer getOverrideIntent() { return iOverrideIntent; }
 	public void setOverrideIntent(Integer overrideIntent) { iOverrideIntent = overrideIntent; }
 
-		
-	
-
 	public String getPin() { return iPin; }
-		
-	
 	public void setPin(String pin) { iPin = pin; }
 
-		
-	
-
-	public Boolean isPinReleased() {
-		return iPin
-	eleased; }
+	public Boolean isPinReleased() { return iPinReleased; }
 	public Boolean getPinReleased() { return iPinReleased; }
-	public void setPinReleased(Boole
-		n pinReleased) { iPi
-	R
+	public void setPinReleased(Boolean pinReleased) { iPinReleased = pinReleased; }
 
-	
-		
-	
-
-	public Date getClassStartDate() { return iClassSt
-		rtDate; }
-	
+	public Date getClassStartDate() { return iClassStartDate; }
 	public void setClassStartDate(Date classStartDate) { iClassStartDate = classStartDate; }
 
-		
-	
-
-	public Date getClassEndDate() { return iClassEndDate
-		 }
-	
+	public Date getClassEndDate() { return iClassEndDate; }
 	public void setClassEndDate(Date classEndDate) { iClassEndDate = classEndDate; }
 
-		
-	
-
-	public Date getScheduleEmailedDate() { return iS
-		heduleEmailedDate; }
-	
+	public Date getScheduleEmailedDate() { return iScheduleEmailedDate; }
 	public void setScheduleEmailedDate(Date scheduleEmailedDate) { iScheduleEmailedDate = scheduleEmailedDate; }
 
-		
-	
-
 	public Session getSession() { return iSession; }
-		
-	
 	public void setSession(Session session) { iSession = session; }
 
-		
-	
-
-	public StudentSectioningStatus getSection
-		ngStatus() { return
-	iSectioningStatus; }
+	public StudentSectioningStatus getSectioningStatus() { return iSectioningStatus; }
 	public void setSectioningStatus(StudentSectioningStatus sectioningStatus) { iSectioningStatus = sectioningStatus; }
 
-		
-	
-
-	public Set<StudentAreaClassificationMajor> getAreaClasfMajors() { return iA
-		eaClasfMajors; }
-	
+	public Set<StudentAreaClassificationMajor> getAreaClasfMajors() { return iAreaClasfMajors; }
 	public void setAreaClasfMajors(Set<StudentAreaClassificationMajor> areaClasfMajors) { iAreaClasfMajors = areaClasfMajors; }
-	public void addToareaClasfMajors(StudentAreaClassificationMajor s
-		udentAreaClassificationM
-	j
-
-		if (iAreaClasfMajors == null) iAreaClasfMajors = new HashSet<StudentAreaClassificati
-		nMajor>();
-	
-
+	public void addToareaClasfMajors(StudentAreaClassificationMajor studentAreaClassificationMajor) {
+		if (iAreaClasfMajors == null) iAreaClasfMajors = new HashSet<StudentAreaClassificationMajor>();
 		iAreaClasfMajors.add(studentAreaClassificationMajor);
 	}
-			
 
 	public Set<StudentAreaClassificationMinor> getAreaClasfMinors() { return iAreaClasfMinors; }
 	public void setAreaClasfMinors(Set<StudentAreaClassificationMinor> areaClasfMinors) { iAreaClasfMinors = areaClasfMinors; }
-	public void addToareaClasfMinors(StudentAreaClassificationMinor s
-		udentAreaClassificationM
-	n
-
-		if (iAreaClasfMinors == null) iAreaClasfMinors = new HashSet<StudentAreaClassificati
-		nMinor>();
-	
-
+	public void addToareaClasfMinors(StudentAreaClassificationMinor studentAreaClassificationMinor) {
+		if (iAreaClasfMinors == null) iAreaClasfMinors = new HashSet<StudentAreaClassificationMinor>();
 		iAreaClasfMinors.add(studentAreaClassificationMinor);
 	}
-			
 
 	public Set<StudentAccomodation> getAccomodations() { return iAccomodations; }
 	public void setAccomodations(Set<StudentAccomodation> accomodations) { iAccomodations = accomodations; }
-	public void addToaccomodations(StudentAccomodation s
-		udentAccomodation) {
-	
-
-		if (iAccomodations == null) iAccomodations = new HashSet<StudentAccom
-		dation>();
-	
-
+	public void addToaccomodations(StudentAccomodation studentAccomodation) {
+		if (iAccomodations == null) iAccomodations = new HashSet<StudentAccomodation>();
 		iAccomodations.add(studentAccomodation);
 	}
-			
 
 	public Set<StudentGroup> getGroups() { return iGroups; }
 	public void setGroups(Set<StudentGroup> groups) { iGroups = groups; }
-	public void addTogroups(StudentGroup s
-		udentGroup) {
-	
-
-		if (iGroups == null) iGroups = new HashSet<Stude
-		tGroup>();
-	
-
+	public void addTogroups(StudentGroup studentGroup) {
+		if (iGroups == null) iGroups = new HashSet<StudentGroup>();
 		iGroups.add(studentGroup);
 	}
-			
 
 	public Set<WaitList> getWaitlists() { return iWaitlists; }
 	public void setWaitlists(Set<WaitList> waitlists) { iWaitlists = waitlists; }
-	public void addTowaitlists(WaitList w
-		itList) {
-	
-
-		if (iWaitlists == null) iWaitlists = new HashSet<W
-		itList>();
-	
-
+	public void addTowaitlists(WaitList waitList) {
+		if (iWaitlists == null) iWaitlists = new HashSet<WaitList>();
 		iWaitlists.add(waitList);
 	}
-			
 
 	public Set<CourseDemand> getCourseDemands() { return iCourseDemands; }
 	public void setCourseDemands(Set<CourseDemand> courseDemands) { iCourseDemands = courseDemands; }
-	public void addTocourseDemands(CourseDemand c
-		urseDemand) {
-	
-
-		if (iCourseDemands == null) iCourseDemands = new HashSet<Cours
-		Demand>();
-	
-
+	public void addTocourseDemands(CourseDemand courseDemand) {
+		if (iCourseDemands == null) iCourseDemands = new HashSet<CourseDemand>();
 		iCourseDemands.add(courseDemand);
 	}
-			
 
 	public Set<StudentClassEnrollment> getClassEnrollments() { return iClassEnrollments; }
 	public void setClassEnrollments(Set<StudentClassEnrollment> classEnrollments) { iClassEnrollments = classEnrollments; }
-	public void addToclassEnrollments(StudentClassEnrollment s
-		udentClassEnrollment) {
-	
-
-		if (iClassEnrollments == null) iClassEnrollments = new HashSet<StudentClassEnr
-		llment>();
-	
-
+	public void addToclassEnrollments(StudentClassEnrollment studentClassEnrollment) {
+		if (iClassEnrollments == null) iClassEnrollments = new HashSet<StudentClassEnrollment>();
 		iClassEnrollments.add(studentClassEnrollment);
 	}
-			
 
 	public Set<LastLikeCourseDemand> getLastLikeCourseDemands() { return iLastLikeCourseDemands; }
 	public void setLastLikeCourseDemands(Set<LastLikeCourseDemand> lastLikeCourseDemands) { iLastLikeCourseDemands = lastLikeCourseDemands; }
-	public void addTolastLikeCourseDemands(LastLikeCourseDemand l
-		stLikeCourseDemand) {
-	
-
-		if (iLastLikeCourseDemands == null) iLastLikeCourseDemands = new HashSet<LastLikeCours
-		Demand>();
-	
-
+	public void addTolastLikeCourseDemands(LastLikeCourseDemand lastLikeCourseDemand) {
+		if (iLastLikeCourseDemands == null) iLastLikeCourseDemands = new HashSet<LastLikeCourseDemand>();
 		iLastLikeCourseDemands.add(lastLikeCourseDemand);
 	}
-			
 
 	public Set<StudentNote> getNotes() { return iNotes; }
 	public void setNotes(Set<StudentNote> notes) { iNotes = notes; }
-	public void addTonotes(StudentNote s
-		udentNote) {
-	
-
-		if (iNotes == null) iNotes = new HashSet<Stud
-		ntNote>();
-	
-
+	public void addTonotes(StudentNote studentNote) {
+		if (iNotes == null) iNotes = new HashSet<StudentNote>();
 		iNotes.add(studentNote);
 	}
-			
 
 	public Set<Advisor> getAdvisors() { return iAdvisors; }
 	public void setAdvisors(Set<Advisor> advisors) { iAdvisors = advisors; }
-	public void addToadvisors(Advisor a
-		visor) {
-	
-
-		if (iAdvisors == null) iAdvisors = new HashSet<
-		dvisor>();
-	
-
+	public void addToadvisors(Advisor advisor) {
+		if (iAdvisors == null) iAdvisors = new HashSet<Advisor>();
 		iAdvisors.add(advisor);
 	}
-			
 
 	public Set<AdvisorCourseRequest> getAdvisorCourseRequests() { return iAdvisorCourseRequests; }
 	public void setAdvisorCourseRequests(Set<AdvisorCourseRequest> advisorCourseRequests) { iAdvisorCourseRequests = advisorCourseRequests; }
-	public void addToadvisorCourseRequests(AdvisorCourseRequest a
-		visorCourseRequest) {
-	
-
-		if (iAdvisorCourseRequests == null) iAdvisorCourseRequests = new HashSet<AdvisorCourse
-		equest>();
-	
-
+	public void addToadvisorCourseRequests(AdvisorCourseRequest advisorCourseRequest) {
+		if (iAdvisorCourseRequests == null) iAdvisorCourseRequests = new HashSet<AdvisorCourseRequest>();
 		iAdvisorCourseRequests.add(advisorCourseRequest);
 	}
-			
 
 	public boolean equals(Object o) {
 		if (o == null || !(o instanceof Student)) return false;
 		if (getUniqueId() == null || ((Student)o).getUniqueId() == null) return false;
-		return getUniqueId().equals(((Student)o).
-			etUniqueId());
-	} 
-			
- 
+		return getUniqueId().equals(((Student)o).getUniqueId());
+	}
+
 	public int hashCode() {
 		if (getUniqueId() == null) return super.hashCode();
 		return getUniqueId().hashCode();
 	}
-			
 
 	public String toString() {
 		return "Student["+getUniqueId()+"]";
 	}
-    
+
 	public String toDebugString() {
 		return "Student[" +
 			"\n	ClassEndDate: " + getClassEndDate() +
-			"\n	ClassStartDate
-				"\n	Email: " + getEmail() +
-				"\n	ExternalUniqueId: " + getExternalUniqueId
-				"\n	FirstName: " + getFirst
-				"\n	FreeTimeCategory: " + getFreeTimeCategory() +
-				"\n	LastName: " + getLastName() +
-				"\n	MaxCredit: " + getMaxCredit() +
-				"\n	MiddleName: " + getMiddleName
-				"\n	MinCredit: " + getMinCredit() +
-				"\n	OverrideExternalId: " + getOverri
-				"\n	OverrideIntent: " + getOverride
-				"\n	OverrideMaxCredit: " + getOverrideMaxCredit() +
-				"\n	OverrideStatus: " + getOverrideStatus() +
-				"\n	OverrideTimeStamp: " + getOverrideTimeStamp() +
-				"\n	Pin: " + getPin() +
-				"\n	PinReleased: " + getPinReleased() +
-				"\n	ScheduleEmailedDate
-				"\n	SchedulePreference: " + getSchedule
-				"\n	SectioningStatus: " + getSectioningStatus() +
-				"\n	Session: " + getSession() +
-				"\n	UniqueId: " + getUniqueId() +
-				"]";
-				
-				
-
-
-	  
+			"\n	ClassStartDate: " + getClassStartDate() +
+			"\n	Email: " + getEmail() +
+			"\n	ExternalUniqueId: " + getExternalUniqueId() +
+			"\n	FirstName: " + getFirstName() +
+			"\n	FreeTimeCategory: " + getFreeTimeCategory() +
+			"\n	LastName: " + getLastName() +
+			"\n	MaxCredit: " + getMaxCredit() +
+			"\n	MiddleName: " + getMiddleName() +
+			"\n	MinCredit: " + getMinCredit() +
+			"\n	OverrideExternalId: " + getOverrideExternalId() +
+			"\n	OverrideIntent: " + getOverrideIntent() +
+			"\n	OverrideMaxCredit: " + getOverrideMaxCredit() +
+			"\n	OverrideStatus: " + getOverrideStatus() +
+			"\n	OverrideTimeStamp: " + getOverrideTimeStamp() +
+			"\n	Pin: " + getPin() +
+			"\n	PinReleased: " + getPinReleased() +
+			"\n	ScheduleEmailedDate: " + getScheduleEmailedDate() +
+			"\n	SchedulePreference: " + getSchedulePreference() +
+			"\n	SectioningStatus: " + getSectioningStatus() +
+			"\n	Session: " + getSession() +
+			"\n	UniqueId: " + getUniqueId() +
+			"]";
+	}
+}
